@@ -499,7 +499,10 @@
 
     <section class="hero reveal" aria-labelledby="saint-evans-title">
       <div class="poster-wrap">
-        <img class="poster" src="SaintEvans-poster-comingsoon-1.png" alt="Saint Evans feature poster" />
+        <picture>
+          <source srcset="SaintEvans-poster-comingsoon-1.webp" type="image/webp" />
+          <img class="poster" src="SaintEvans-poster-comingsoon-1.png" alt="Saint Evans feature poster" />
+        </picture>
       </div>
       <article class="reveal">
         <span class="kicker">Now in Post-Production</span>
@@ -610,7 +613,7 @@
     /* ── Poster parallax + load ── */
     (function () {
       var wrap = document.querySelector('.poster-wrap');
-      var img  = wrap && wrap.querySelector('.poster');
+      var img  = wrap && wrap.querySelector('img.poster');
       if (!img) return;
 
       if (img.complete) {
