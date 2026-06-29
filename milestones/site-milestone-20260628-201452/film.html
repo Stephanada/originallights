@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Original Lights Productions | Film</title>
+  <meta name="description" content="Film projects by Original Lights Productions, including Saint Evans and Gregory Da Silva's screen work." />
+  <meta name="theme-color" content="#06070a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Original Lights Productions" />
+  <meta property="og:title" content="Original Lights Productions | Film" />
+  <meta property="og:description" content="Film projects by Original Lights Productions, including Saint Evans and Gregory Da Silva's screen work." />
+  <meta property="og:image" content="SaintEvans-poster-comingsoon-1.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Original Lights Productions | Film" />
+  <meta name="twitter:description" content="Film projects by Original Lights Productions, including Saint Evans and Gregory Da Silva's screen work." />
+  <meta name="twitter:image" content="SaintEvans-poster-comingsoon-1.png" />
+  <link rel="icon" href="OL-flat-logo-grey.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="OriginalLights-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #06070a;
+      --ink: #edf1f8;
+      --muted: #9ba8be;
+      --line: rgba(237, 241, 248, 0.16);
+      --accent: #d6a15f;
+      --max: 1140px;
+      --pad: clamp(16px, 4vw, 42px);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    body {
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      line-height: 1.45;
+      background-image:
+        radial-gradient(circle at 20% 10%, rgba(214, 161, 95, 0.15), transparent 28%),
+        radial-gradient(circle at 82% 20%, rgba(86, 116, 186, 0.15), transparent 30%),
+        linear-gradient(180deg, #06070a 0%, #0b111a 58%, #06070a 100%);
+      min-height: 100vh;
+    }
+
+    .site {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px var(--pad) 50px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      margin-bottom: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(0.98rem, 2.1vw, 1.26rem);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .nav a.active,
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: var(--ink);
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.9fr) 1fr;
+      gap: clamp(16px, 3vw, 42px);
+      align-items: end;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 24px;
+      margin-bottom: 22px;
+    }
+
+    .poster {
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+      border: 1px solid rgba(237, 241, 248, 0.24);
+      box-shadow: 0 28px 46px rgba(0, 0, 0, 0.5);
+    }
+
+    .kicker {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 0.78rem;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .hero h2,
+    .section-title,
+    .credits h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .hero h2 {
+      font-size: clamp(3rem, 8vw, 6.2rem);
+      line-height: 0.84;
+    }
+
+    .hero p,
+    .section-copy,
+    .award-result,
+    .award-meta,
+    .credits-lead,
+    .credit-note,
+    .footer {
+      color: var(--muted);
+    }
+
+    .hero p {
+      margin: 14px 0 0;
+      max-width: 60ch;
+      font-size: clamp(0.96rem, 1.4vw, 1.05rem);
+    }
+
+    .actions,
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .actions a,
+    .links a {
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 4px;
+    }
+
+    .actions a:hover,
+    .actions a:focus-visible,
+    .links a:hover,
+    .links a:focus-visible {
+      color: var(--accent);
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .awards,
+    .gallery,
+    .credits {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 22px;
+      margin-bottom: 22px;
+    }
+
+    .section-title,
+    .credits h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      line-height: 0.92;
+      margin-bottom: 10px;
+    }
+
+    .section-copy {
+      margin: 0;
+      font-size: 0.92rem;
+    }
+
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 14px;
+    }
+
+    .award-block {
+      border-top: 1px solid rgba(237, 241, 248, 0.16);
+      padding-top: 12px;
+    }
+
+    .award-block h3,
+    .credit-card h3 {
+      margin: 0 0 4px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .award-meta {
+      font-size: 0.84rem;
+    }
+
+    .award-meta .role {
+      display: block;
+      margin-top: 2px;
+      font-style: italic;
+    }
+
+    .award-list {
+      list-style: none;
+      margin: 10px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 6px;
+    }
+
+    .award-list li {
+      font-size: 0.88rem;
+      line-height: 1.35;
+      display: flex;
+      gap: 8px;
+    }
+
+    .award-list li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-top: 5px;
+      background: var(--accent);
+      flex: 0 0 6px;
+    }
+
+    .award-fest {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .gallery-item {
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+      border: 1px solid rgba(237, 241, 248, 0.16);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+
+    .gallery-item figcaption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.76));
+      padding: 18px 8px 8px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+    }
+
+    .credits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .credit-card {
+      border-top: 1px solid rgba(237, 241, 248, 0.16);
+      padding-top: 10px;
+    }
+
+    .credit-card p,
+    .credit-note {
+      font-size: 0.9rem;
+    }
+
+    .credit-note {
+      margin-top: 12px;
+    }
+
+    .credit-note a,
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .site-footer {
+      margin-top: 36px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 32px;
+      padding-bottom: 28px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-brand img {
+      width: 42px;
+      height: 42px;
+      object-fit: contain;
+      opacity: 0.7;
+    }
+
+    .footer-brand strong {
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+    }
+
+    .footer-brand p {
+      margin: 0;
+      font-size: 0.84rem;
+      color: var(--muted);
+      max-width: 34ch;
+      line-height: 1.5;
+    }
+
+    .footer-col h4 {
+      margin: 0 0 12px;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 9px;
+    }
+
+    .footer-col a {
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 0.86rem;
+      opacity: 0.8;
+      transition: opacity 200ms ease, color 200ms ease;
+    }
+
+    .footer-col a:hover,
+    .footer-col a:focus-visible {
+      opacity: 1;
+      color: var(--accent);
+      outline: none;
+    }
+
+    .footer-base {
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .footer-base a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-base a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 760px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 940px) {
+      .hero,
+      .awards-grid,
+      .credits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .poster {
+        max-width: 420px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .site {
+        padding-top: 14px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="site">
+    <header class="topbar">
+      <div class="brand">
+        <img src="OL-flat-logo-grey.svg" alt="Original Lights Productions logo" />
+        <h1>Original Lights Productions</h1>
+      </div>
+      <nav class="nav" aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="film.html">Film</a>
+        <a href="music.html">Music Videos</a>
+        <a href="https://www.beatstars.com/originallights" target="_blank" rel="noopener noreferrer">Beats</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="film-title">
+      <img class="poster" src="SaintEvans-poster-comingsoon-1.png" alt="Saint Evans feature poster" />
+      <article>
+        <span class="kicker">Original Lights Film</span>
+        <h2 id="film-title">Film</h2>
+        <p>Independent films shaped around atmosphere, emotional narrative, and visual identity led by Gregory Da Silva. Saint Evans remains the current feature focus.</p>
+        <div class="actions">
+          <a href="mailto:info@originallightsproductions.com">Production Inquiries</a>
+          <a href="https://www.imdb.com/name/nm3713050/" target="_blank" rel="noopener noreferrer">IMDb Profile</a>
+          <a href="https://www.youtube.com/watch?v=jNyGyHlZSOk" target="_blank" rel="noopener noreferrer">Watch Reel</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="awards" aria-label="Festival awards and selections">
+      <h3 class="section-title">Festival Awards and Selections</h3>
+      <p class="section-copy">Live from the shared project data used across the site.</p>
+      <div class="awards-grid" id="awards-root"></div>
+    </section>
+
+    <section class="gallery" aria-label="Film gallery">
+      <h3 class="section-title">Film Gallery</h3>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="IMDB%20Images/4am-Film.jpeg" alt="4am short film still" loading="lazy" />
+          <figcaption>4am</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="IMDB%20Images/Chimera-Road-Film.jpeg" alt="Chimera Road short film" loading="lazy" />
+          <figcaption>Chimera Road</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="IMDB%20Images/Lady-Darb-Film.jpeg" alt="Lady Darb short film" loading="lazy" />
+          <figcaption>Lady Darb</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="IMDB%20Images/Lambs-To-The-Slaughter-film.jpeg" alt="Lambs to the Slaughter short film" loading="lazy" />
+          <figcaption>Lambs to the Slaughter</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="IMDB%20Images/Snare-Film.jpeg" alt="Snare short film" loading="lazy" />
+          <figcaption>Snare</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="SaintEvans-poster-comingsoon-1.png" alt="Saint Evans feature film poster" loading="lazy" />
+          <figcaption>Saint Evans</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="credits" aria-label="Gregory Da Silva credits">
+      <div id="credits-root"></div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="OL-flat-logo-grey.svg" alt="Original Lights Productions" />
+          <strong>Original Lights Productions</strong>
+          <p>Independent film and music video production led by Gregory Da Silva. Based in Ontario, Canada.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="film.html">Film</a></li>
+            <li><a href="music.html">Music Videos</a></li>
+            <li><a href="https://www.beatstars.com/originallights" target="_blank" rel="noopener noreferrer">Beats</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:info@originallightsproductions.com">Email</a></li>
+            <li><a href="https://www.instagram.com/original_lights_production" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li><a href="https://www.youtube.com/@gregorydasilva" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+            <li><a href="https://www.imdb.com/name/nm3713050/" target="_blank" rel="noopener noreferrer">IMDb</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-base">
+        <span>&copy; 2024 Original Lights Productions</span>
+        <a href="mailto:info@originallightsproductions.com">info@originallightsproductions.com</a>
+      </div>
+    </footer>
+  </main>
+  <script src="credits-data.js"></script>
+  <script src="credits-render.js"></script>
+  <script>
+    (function () {
+      var root = document.getElementById("awards-root");
+      var data = window.OLP_AWARDS;
+      if (!root || !data) return;
+      root.innerHTML = data.map(function (project) {
+        var rows = project.awards.map(function (a) {
+          return "<li><span class=\"award-fest\">" + a.fest + "</span> &mdash; <span class=\"award-result\">" + a.result + "</span></li>";
+        }).join("");
+        return "<article class=\"award-block\"><div class=\"award-block-header\"><h3>" + project.title + "</h3><span class=\"award-meta\">" + project.type + " (" + project.year + ")<span class=\"role\">" + project.role + "</span></span></div><ul class=\"award-list\">" + rows + "</ul></article>";
+      }).join("");
+    })();
+
+    window.renderOlpCredits("credits-root", {
+      title: "Selected Credits for Gregory Da Silva",
+      lead: "Writing, directing, production, and music credits are synced from one shared source."
+    });
+  </script>
+</body>
+</html>
