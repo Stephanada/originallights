@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Original Lights Productions | Music Videos</title>
+  <meta name="description" content="Music video projects by Original Lights Productions." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --canvas: #0b0f14;
+      --paper: #121924;
+      --paper-2: #18202c;
+      --ink: #edf3ff;
+      --ink-soft: #b5c0d1;
+      --accent: #f29b4b;
+      --line: #253041;
+      --radius-lg: 24px;
+      --radius-md: 14px;
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 82% 12%, rgba(242, 155, 75, 0.14), transparent 24%),
+        linear-gradient(180deg, #090d12 0%, #0f1520 100%);
+      line-height: 1.5;
+    }
+
+    .site {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 24px 20px 42px;
+    }
+
+    .topbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 54px;
+      height: 54px;
+      object-fit: contain;
+      background: #0d141f;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 6px;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 0.08em;
+      font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .nav a.active,
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: var(--ink);
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .hero {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .hero h2 {
+      margin: 0 0 10px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(1.7rem, 4.2vw, 2.6rem);
+      letter-spacing: 0.03em;
+      line-height: 1;
+    }
+
+    .hero p { margin: 0; color: var(--ink-soft); }
+
+    .list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .item {
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+
+    .item h3 {
+      margin: 0 0 6px;
+      font-size: 1.02rem;
+    }
+
+    .item p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .credits {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+
+    .credits h2 {
+      margin: 0 0 12px;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(1.5rem, 3.2vw, 2rem);
+      letter-spacing: 0.03em;
+      line-height: 1;
+    }
+
+    .credits p {
+      margin: 0 0 12px;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .credits-lead {
+      margin: 0 0 12px;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .credits-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .credit-card {
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 14px;
+    }
+
+    .credit-card h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    .credit-card p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.93rem;
+    }
+
+    .credit-note {
+      margin-top: 12px;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+    }
+
+    .credits a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .gallery {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+
+    .gallery-title {
+      margin: 0 0 14px;
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 0.03em;
+      font-size: clamp(1.5rem, 3.2vw, 2rem);
+      line-height: 1;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery-item {
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      aspect-ratio: 3 / 4;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-item figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.76));
+      color: #fff;
+      padding: 20px 10px 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .channel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+
+    .channel h2 {
+      margin: 0 0 10px;
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 0.03em;
+      font-size: clamp(1.5rem, 3.2vw, 2rem);
+      line-height: 1;
+    }
+
+    .channel p {
+      margin: 0 0 12px;
+      color: var(--ink-soft);
+      font-size: 0.94rem;
+      max-width: 72ch;
+    }
+
+    .channel-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .channel-links a {
+      text-decoration: none;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 700;
+      font-size: 0.86rem;
+      background: var(--paper-2);
+    }
+
+    .footer {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--paper);
+      padding: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .links { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .links a {
+      text-decoration: none;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 860px) {
+      .list { grid-template-columns: 1fr; }
+      .credits-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="site">
+    <header class="topbar">
+      <div class="brand">
+        <img src="OL-flat-logo-grey.svg" alt="Original Lights Productions logo" />
+        <h1>Original Lights Productions</h1>
+      </div>
+      <nav class="nav" aria-label="Site pages">
+        <a href="index.html">Home</a>
+        <a href="film.html">Film</a>
+        <a class="active" href="music.html">Music Videos</a>
+        <a href="https://www.beatstars.com/originallights" target="_blank" rel="noopener noreferrer">Beats</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h2>Music Videos</h2>
+      <p>
+        The music video arm of Original Lights Productions focuses on story-driven visual performance pieces
+        that extend each song into a cinematic world.
+      </p>
+    </section>
+
+    <section class="channel" aria-label="YouTube and beats">
+      <h2>YouTube Channel and Beats</h2>
+      <p>
+        Gregory da Silva's Official Artist Channel features the Original Lights Productions Reel 2023,
+        music videos, shorts, release videos, and the Type Beats catalog.
+      </p>
+      <div class="channel-links">
+        <a href="https://www.youtube.com/@gregorydasilva" target="_blank" rel="noopener noreferrer">Official YouTube Channel</a>
+        <a href="https://www.youtube.com/watch?v=jNyGyHlZSOk" target="_blank" rel="noopener noreferrer">Watch Reel 2023</a>
+        <a href="https://www.youtube.com/playlist?list=PLSbpTUv-ZunSyAbbrIiLDxWCZZiD0SOLR" target="_blank" rel="noopener noreferrer">Type Beats Playlist</a>
+        <a href="https://originallights.beatstars.com/" target="_blank" rel="noopener noreferrer">BeatStars Store</a>
+      </div>
+    </section>
+
+    <section class="list" aria-label="Music video focus areas">
+      <article class="item">
+        <h3>Narrative Concept</h3>
+        <p>Music videos developed with character, mood, and clear visual storytelling arcs.</p>
+      </article>
+      <article class="item">
+        <h3>Performance Direction</h3>
+        <p>Performance-driven framing that balances artist identity with cinematic atmosphere.</p>
+      </article>
+      <article class="item">
+        <h3>Post and Visual Style</h3>
+        <p>Editing, motion, and finishing workflows tuned to independent music video releases.</p>
+      </article>
+    </section>
+
+    <section class="gallery" aria-label="Music gallery">
+      <h2 class="gallery-title">Music Video Gallery</h2>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="IMDB%20Images/Carry-Toronto-Music.jpeg" alt="Carry Toronto music video" loading="lazy" />
+          <figcaption>Carry Toronto</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="IMDB%20Images/Crow-Flies-Music.jpeg" alt="Crow Flies music video" loading="lazy" />
+          <figcaption>Crow Flies</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="IMDB%20Images/Dream-Is-On-Music.jpeg" alt="Dream Is On music video" loading="lazy" />
+          <figcaption>Dream Is On</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="IMDB%20Images/Family-music.jpeg" alt="Family music video" loading="lazy" />
+          <figcaption>Family</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="IMDB%20Images/Life-Beyond-Control-music.jpeg" alt="Life Beyond Control music video" loading="lazy" />
+          <figcaption>Life Beyond Control</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="IMDB%20Images/Malvern-Original-Lights-Music.jpeg" alt="Malvern Original Lights music video" loading="lazy" />
+          <figcaption>Malvern Original Lights</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="IMDB%20Images/No-Regrets-Music.jpeg" alt="No Regrets music video" loading="lazy" />
+          <figcaption>No Regrets</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="IMDB%20Images/Running-Stream.jpeg" alt="Running Stream music video" loading="lazy" />
+          <figcaption>Running Stream</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="IMDB%20Images/set-me-free-music.jpeg" alt="Set Me Free music video" loading="lazy" />
+          <figcaption>Set Me Free</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="IMDB%20Images/Take-Everything-Music.jpeg" alt="Take Everything music video" loading="lazy" />
+          <figcaption>Take Everything</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="credits" aria-label="Gregory Da Silva music and screen credits">
+      <div id="credits-root"></div>
+    </section>
+
+    <footer class="footer">
+      <span>Inquiries: <a href="mailto:info@originallightsproductions.com">info@originallightsproductions.com</a></span>
+      <div class="links">
+        <a href="https://www.instagram.com/original_lights_production" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.youtube.com/@gregorydasilva" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+    </footer>
+  </main>
+  <script src="credits-data.js"></script>
+  <script src="credits-render.js"></script>
+  <script>
+    window.renderOlpCredits("credits-root", {
+      title: "Music Video and Screen Credits",
+      lead: "Gregory Da Silva's writing, directing, production, and music credits are maintained in one shared data block."
+    });
+  </script>
+</body>
+</html>
