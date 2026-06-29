@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Original Lights Productions | Music Videos</title>
-  <meta name="description" content="Music video projects by Original Lights Productions." />
-  <meta name="theme-color" content="#050608" />
+  <meta name="description" content="Music video work by Original Lights Productions, centered on Gregory Da Silva's cinematic visual direction." />
+  <meta name="theme-color" content="#06070a" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Original Lights Productions" />
   <meta property="og:title" content="Original Lights Productions | Music Videos" />
@@ -22,14 +22,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #050608;
-      --ink: #ecf0f7;
-      --muted: #a1acbe;
-      --accent: #d7a468;
-      --line: #1f2a3b;
-      --line-soft: rgba(236, 240, 247, 0.14);
-      --max: 1200px;
-      --pad: clamp(16px, 3.5vw, 42px);
+      --bg: #06070a;
+      --ink: #edf1f8;
+      --muted: #9ba8be;
+      --line: rgba(237, 241, 248, 0.16);
+      --accent: #d6a15f;
+      --max: 1140px;
+      --pad: clamp(16px, 4vw, 42px);
     }
 
     * { box-sizing: border-box; }
@@ -43,91 +42,69 @@
 
     body {
       font-family: "Space Grotesk", "Segoe UI", sans-serif;
-      line-height: 1.5;
+      line-height: 1.45;
       background-image:
-        radial-gradient(circle at 82% 12%, rgba(215, 164, 104, 0.14), transparent 24%),
-        radial-gradient(circle at 20% 24%, rgba(79, 111, 184, 0.18), transparent 30%),
-        linear-gradient(180deg, #050608 0%, #0b111b 66%, #06080d 100%);
+        radial-gradient(circle at 82% 9%, rgba(214, 161, 95, 0.15), transparent 28%),
+        radial-gradient(circle at 15% 28%, rgba(86, 116, 186, 0.15), transparent 30%),
+        linear-gradient(180deg, #06070a 0%, #0b111a 58%, #06070a 100%);
       min-height: 100vh;
     }
 
     .site {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 18px var(--pad) 52px;
+      padding: 18px var(--pad) 50px;
     }
-
-    .topbar,
-    .hero,
-    .channel,
-    .ribbon,
-    .gallery,
-    .credits,
-    .footer {
-      opacity: 0;
-      transform: translateY(10px);
-      animation: reveal 800ms ease forwards;
-    }
-
-    .topbar { animation-delay: 0ms; }
-    .hero { animation-delay: 80ms; }
-    .channel { animation-delay: 160ms; }
-    .ribbon { animation-delay: 240ms; }
-    .gallery { animation-delay: 320ms; }
-    .credits { animation-delay: 400ms; }
-    .footer { animation-delay: 480ms; }
 
     .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      gap: 14px;
+      border-bottom: 1px solid var(--line);
       padding-bottom: 14px;
-      border-bottom: 1px solid var(--line-soft);
       margin-bottom: 22px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       min-width: 0;
     }
 
     .brand img {
-      width: 52px;
-      height: 52px;
+      width: 48px;
+      height: 48px;
       object-fit: contain;
-      filter: drop-shadow(0 0 12px rgba(215, 164, 104, 0.2));
     }
 
     .brand h1 {
       margin: 0;
-      font-family: "Space Grotesk", "Segoe UI", sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+      font-size: clamp(0.98rem, 2.1vw, 1.26rem);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      text-transform: uppercase;
+      font-weight: 700;
     }
 
     .nav {
       display: flex;
+      gap: 12px;
       flex-wrap: wrap;
       justify-content: flex-end;
-      gap: 12px;
     }
 
     .nav a {
       text-decoration: none;
       color: var(--muted);
-      font-size: 0.84rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      padding: 4px 0;
       border-bottom: 1px solid transparent;
+      padding-bottom: 4px;
     }
 
     .nav a.active,
@@ -140,32 +117,32 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1.1fr minmax(240px, 360px);
-      gap: clamp(20px, 3.5vw, 48px);
+      grid-template-columns: 1fr minmax(240px, 360px);
+      gap: clamp(16px, 3vw, 42px);
       align-items: end;
-      min-height: min(72vh, 640px);
-      position: relative;
-      margin-bottom: 26px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 24px;
+      margin-bottom: 22px;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: auto -14px 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(215, 164, 104, 0.85), transparent);
+    .still {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border: 1px solid rgba(237, 241, 248, 0.24);
+      box-shadow: 0 28px 46px rgba(0, 0, 0, 0.5);
     }
 
-    .eyebrow,
-    .meta-label {
-      display: inline-block;
+    .kicker {
       color: var(--accent);
-      font-size: 0.8rem;
-      letter-spacing: 0.14em;
       text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 0.78rem;
+      margin-bottom: 10px;
+      display: inline-block;
     }
 
-    .title,
+    .hero h2,
     .section-title,
     .credits h2 {
       margin: 0;
@@ -174,33 +151,23 @@
       letter-spacing: 0.04em;
     }
 
-    .title {
-      margin-top: 10px;
-      font-size: clamp(3.7rem, 10vw, 7.2rem);
-      line-height: 0.88;
+    .hero h2 {
+      font-size: clamp(3rem, 8.5vw, 6.2rem);
+      line-height: 0.84;
     }
 
-    .hero-copy,
+    .hero p,
     .section-copy,
     .credits-lead,
     .credit-note,
-    .footer,
-    .footer a {
+    .footer {
       color: var(--muted);
     }
 
-    .hero-copy {
+    .hero p {
+      margin: 14px 0 0;
       max-width: 60ch;
-      margin: 16px 0;
-      font-size: clamp(1rem, 1.6vw, 1.08rem);
-    }
-
-    .profile-shot {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      border: 1px solid rgba(236, 240, 247, 0.2);
-      box-shadow: 0 28px 46px rgba(0, 0, 0, 0.5);
+      font-size: clamp(0.96rem, 1.4vw, 1.05rem);
     }
 
     .actions,
@@ -208,24 +175,27 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
+      margin-top: 18px;
     }
 
     .actions a,
-    .links a {
+    .links a,
+    .channel-links a {
       text-decoration: none;
+      color: var(--ink);
+      font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--ink);
       border-bottom: 1px solid var(--line);
       padding-bottom: 4px;
     }
 
     .actions a:hover,
-    .links a:hover,
     .actions a:focus-visible,
-    .links a:focus-visible {
+    .links a:hover,
+    .links a:focus-visible,
+    .channel-links a:hover,
+    .channel-links a:focus-visible {
       color: var(--accent);
       border-color: var(--accent);
       outline: none;
@@ -233,113 +203,51 @@
 
     .channel,
     .gallery,
-    .credits,
-    .footer {
-      padding-top: 28px;
-      border-top: 1px solid var(--line-soft);
-      margin-top: 28px;
+    .credits {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 22px;
+      margin-bottom: 22px;
     }
 
     .channel {
       display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: clamp(18px, 3vw, 40px);
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
       align-items: start;
-    }
-
-    .link-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 10px;
-    }
-
-    .link-list a {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--ink);
-      border-bottom: 1px solid rgba(236, 240, 247, 0.18);
-      padding: 8px 0;
-    }
-
-    .link-list a:hover,
-    .link-list a:focus-visible {
-      color: var(--accent);
-      border-color: rgba(215, 164, 104, 0.9);
-      outline: none;
-    }
-
-    .link-list strong {
-      font-size: 0.92rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-weight: 500;
-    }
-
-    .link-list em {
-      font-size: 0.76rem;
-      color: var(--muted);
-      font-style: normal;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      white-space: nowrap;
-    }
-
-    .ribbon {
-      margin: 0 calc(var(--pad) * -1);
-      padding: 18px var(--pad);
-      border-top: 1px solid var(--line-soft);
-      border-bottom: 1px solid var(--line-soft);
-      background: linear-gradient(90deg, rgba(15, 23, 35, 0.85), rgba(18, 14, 23, 0.92));
-    }
-
-    .ribbon-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .ribbon strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      font-weight: 700;
-    }
-
-    .ribbon span {
-      display: block;
-      font-size: 0.92rem;
-      color: #dbe3f2;
     }
 
     .section-title,
     .credits h2 {
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-      line-height: 0.95;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      line-height: 0.92;
       margin-bottom: 10px;
+    }
+
+    .section-copy {
+      margin: 0;
+      font-size: 0.92rem;
+    }
+
+    .channel-links {
+      display: grid;
+      gap: 10px;
+      align-content: start;
     }
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 12px;
-      margin-top: 16px;
+      grid-template-columns: repeat(auto-fill, minmax(156px, 1fr));
+      gap: 10px;
+      margin-top: 14px;
     }
 
     .gallery-item {
       margin: 0;
       position: relative;
       overflow: hidden;
-      border: 1px solid rgba(236, 240, 247, 0.16);
       aspect-ratio: 3 / 4;
-      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(237, 241, 248, 0.16);
+      background: rgba(255, 255, 255, 0.02);
     }
 
     .gallery-item img {
@@ -347,11 +255,11 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.3s ease;
+      transition: transform 0.25s ease;
     }
 
     .gallery-item:hover img {
-      transform: scale(1.04);
+      transform: scale(1.03);
     }
 
     .gallery-item figcaption {
@@ -359,42 +267,40 @@
       left: 0;
       right: 0;
       bottom: 0;
-      padding: 20px 10px 8px;
       background: linear-gradient(transparent, rgba(0, 0, 0, 0.76));
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.03em;
+      padding: 18px 8px 8px;
+      font-size: 0.78rem;
       text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
     }
 
     .credits-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 16px;
+      gap: 14px;
+      margin-top: 14px;
     }
 
     .credit-card {
-      padding: 14px 0 0 14px;
-      border-top: 1px solid rgba(236, 240, 247, 0.12);
-      border-left: 1px solid rgba(236, 240, 247, 0.12);
-      min-height: 112px;
+      border-top: 1px solid rgba(237, 241, 248, 0.16);
+      padding-top: 10px;
     }
 
     .credit-card h3 {
       margin: 0 0 4px;
-      font-size: 1.04rem;
-      letter-spacing: 0.03em;
+      font-size: 1rem;
       text-transform: uppercase;
+      letter-spacing: 0.04em;
     }
 
     .credit-card p,
     .credit-note {
-      font-size: 0.93rem;
+      font-size: 0.9rem;
     }
 
     .credit-note {
-      margin-top: 14px;
+      margin-top: 12px;
     }
 
     .credit-note a,
@@ -405,29 +311,21 @@
 
     .footer {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
-      gap: 12px;
-      font-size: 0.9rem;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 0.86rem;
     }
 
-    @keyframes reveal {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 980px) {
+    @media (max-width: 940px) {
       .hero,
       .channel,
-      .ribbon-grid,
       .credits-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        min-height: auto;
+      .still {
+        max-width: 420px;
       }
     }
 
@@ -444,17 +342,6 @@
       .nav {
         justify-content: flex-start;
       }
-
-      .title {
-        font-size: clamp(3rem, 15vw, 5rem);
-      }
-
-      .ribbon {
-        margin-left: -16px;
-        margin-right: -16px;
-        padding-left: 16px;
-        padding-right: 16px;
-      }
     }
   </style>
 </head>
@@ -465,7 +352,7 @@
         <img src="OL-flat-logo-grey.svg" alt="Original Lights Productions logo" />
         <h1>Original Lights Productions</h1>
       </div>
-      <nav class="nav" aria-label="Site pages">
+      <nav class="nav" aria-label="Site navigation">
         <a href="index.html">Home</a>
         <a href="film.html">Film</a>
         <a class="active" href="music.html">Music Videos</a>
@@ -475,71 +362,33 @@
 
     <section class="hero" aria-labelledby="music-title">
       <article>
-        <span class="eyebrow">Original Lights Music Videos</span>
-        <h2 class="title" id="music-title">Music Videos</h2>
-        <p class="hero-copy">The music video arm of Original Lights Productions focuses on story-driven visual performance pieces that extend each song into a cinematic world. This page is about video direction and visual authorship, not music production services.</p>
-        <p class="meta-label">Narrative Concept. Performance Direction. Visual Finish.</p>
+        <span class="kicker">Original Lights Music Videos</span>
+        <h2 id="music-title">Music Videos</h2>
+        <p>Cinematic music video direction focused on narrative, performance, and visual atmosphere. This page is dedicated to video work and release visuals.</p>
         <div class="actions">
           <a href="https://www.youtube.com/@gregorydasilva" target="_blank" rel="noopener noreferrer">YouTube Channel</a>
           <a href="https://www.beatstars.com/originallights" target="_blank" rel="noopener noreferrer">BeatStars Store</a>
           <a href="film.html">View Film Work</a>
         </div>
       </article>
-      <img class="profile-shot" src="IMDB%20Images/Dream-Is-On-Music.jpeg" alt="Dream Is On music video still" />
+      <img class="still" src="IMDB%20Images/Dream-Is-On-Music.jpeg" alt="Dream Is On music video still" />
     </section>
 
-    <section class="channel" aria-label="YouTube and beats">
+    <section class="channel" aria-label="Channel and playlist links">
       <div>
-        <h2 class="section-title">Channel, Reel, and Beats</h2>
-        <p class="section-copy">Gregory da Silva's Official Artist Channel features the Original Lights Reel 2023, music videos, shorts, release videos, and the Type Beats catalog. BeatStars remains the direct outlet for produced beat sales.</p>
+        <h3 class="section-title">Channel and Releases</h3>
+        <p class="section-copy">The Official Artist Channel holds the reel, singles, shorts, and the Type Beats catalog under one feed.</p>
       </div>
-      <ul class="link-list">
-        <li>
-          <a href="https://www.youtube.com/@gregorydasilva" target="_blank" rel="noopener noreferrer">
-            <strong>Official YouTube Channel</strong>
-            <em>Visit</em>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/watch?v=jNyGyHlZSOk" target="_blank" rel="noopener noreferrer">
-            <strong>Original Lights Reel 2023</strong>
-            <em>Watch</em>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/playlist?list=PLSbpTUv-ZunSyAbbrIiLDxWCZZiD0SOLR" target="_blank" rel="noopener noreferrer">
-            <strong>Type Beats Playlist</strong>
-            <em>Listen</em>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.beatstars.com/originallights" target="_blank" rel="noopener noreferrer">
-            <strong>BeatStars Store</strong>
-            <em>Shop</em>
-          </a>
-        </li>
-      </ul>
-    </section>
-
-    <section class="ribbon" aria-label="Music video focus areas">
-      <div class="ribbon-grid">
-        <div>
-          <strong>Narrative Concept</strong>
-          <span>Music videos developed with character, mood, and a clear storytelling arc.</span>
-        </div>
-        <div>
-          <strong>Performance Direction</strong>
-          <span>Artist identity framed through cinematic movement, lighting, and atmosphere.</span>
-        </div>
-        <div>
-          <strong>Post and Visual Style</strong>
-          <span>Editing, motion, and finishing workflows tuned to independent release cycles.</span>
-        </div>
+      <div class="channel-links">
+        <a href="https://www.youtube.com/watch?v=jNyGyHlZSOk" target="_blank" rel="noopener noreferrer">Original Lights Reel 2023</a>
+        <a href="https://www.youtube.com/@gregorydasilva" target="_blank" rel="noopener noreferrer">Official YouTube Channel</a>
+        <a href="https://www.youtube.com/playlist?list=PLSbpTUv-ZunSyAbbrIiLDxWCZZiD0SOLR" target="_blank" rel="noopener noreferrer">Type Beats Playlist</a>
+        <a href="https://www.beatstars.com/originallights" target="_blank" rel="noopener noreferrer">BeatStars Store</a>
       </div>
     </section>
 
-    <section class="gallery" aria-label="Music gallery">
-      <h2 class="section-title">Music Video Gallery</h2>
+    <section class="gallery" aria-label="Music video gallery">
+      <h3 class="section-title">Music Video Gallery</h3>
       <div class="gallery-grid">
         <figure class="gallery-item">
           <img src="IMDB%20Images/Carry-Toronto-Music.jpeg" alt="Carry Toronto music video" loading="lazy" />
@@ -589,10 +438,10 @@
     </section>
 
     <footer class="footer">
-      <span>Inquiries: <a href="mailto:info@originallightsproductions.com">info@originallightsproductions.com</a></span>
+      <span>Original Lights Productions | Ontario, Canada</span>
       <div class="links">
         <a href="https://www.instagram.com/original_lights_production" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://www.youtube.com/@gregorydasilva" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="mailto:info@originallightsproductions.com">info@originallightsproductions.com</a>
       </div>
     </footer>
   </main>
