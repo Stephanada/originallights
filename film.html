@@ -404,21 +404,50 @@
       border-color: var(--accent);
     }
 
-    .playlist-frame {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #000;
-      border: 1px solid var(--line);
+    .playlist-strip {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(220px, 1fr));
+      gap: 10px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 4px;
     }
 
-    .playlist-frame iframe {
-      position: absolute;
-      inset: 0;
+    .playlist-card {
+      margin: 0;
+      min-width: 220px;
+      border: 1px solid rgba(237, 241, 248, 0.16);
+      background: rgba(255, 255, 255, 0.02);
+      overflow: hidden;
+      scroll-snap-align: start;
+    }
+
+    .playlist-card a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .playlist-card iframe {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 16 / 9;
       border: 0;
       display: block;
+      background: #000;
+    }
+
+    .playlist-card figcaption {
+      padding: 8px;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      border-top: 1px solid rgba(237, 241, 248, 0.12);
+    }
+
+    .playlist-card a:hover figcaption {
+      color: var(--accent);
     }
 
     .gallery-grid {
@@ -605,6 +634,10 @@
         grid-template-columns: 1fr;
       }
 
+      .playlist-strip {
+        grid-template-columns: repeat(5, minmax(260px, 1fr));
+      }
+
       .poster {
         max-width: 420px;
       }
@@ -671,14 +704,37 @@
         <h3>Watch the Film Work</h3>
         <a href="https://www.youtube.com/playlist?list=PLSbpTUv-ZunQkKdwDrvQ9UZlxvz2Q5Fc0" target="_blank" rel="noopener noreferrer">Open on YouTube &rarr;</a>
       </div>
-      <div class="playlist-frame">
-        <iframe
-          src="https://www.youtube.com/embed/videoseries?list=PLSbpTUv-ZunQkKdwDrvQ9UZlxvz2Q5Fc0&rel=0&modestbranding=1&color=white&iv_load_policy=3"
-          title="Original Lights Film Playlist"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+      <div class="playlist-strip" role="list">
+        <figure class="playlist-card" role="listitem">
+          <a href="https://www.youtube.com/playlist?list=PLSbpTUv-ZunQkKdwDrvQ9UZlxvz2Q5Fc0" target="_blank" rel="noopener noreferrer">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLSbpTUv-ZunQkKdwDrvQ9UZlxvz2Q5Fc0&index=1&rel=0&modestbranding=1&color=white&iv_load_policy=3" title="Film playlist highlight 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <figcaption>Film Work Highlight 01</figcaption>
+          </a>
+        </figure>
+        <figure class="playlist-card" role="listitem">
+          <a href="https://www.youtube.com/playlist?list=PLSbpTUv-ZunQkKdwDrvQ9UZlxvz2Q5Fc0" target="_blank" rel="noopener noreferrer">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLSbpTUv-ZunQkKdwDrvQ9UZlxvz2Q5Fc0&index=2&rel=0&modestbranding=1&color=white&iv_load_policy=3" title="Film playlist highlight 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <figcaption>Film Work Highlight 02</figcaption>
+          </a>
+        </figure>
+        <figure class="playlist-card" role="listitem">
+          <a href="https://www.youtube.com/playlist?list=PLSbpTUv-ZunQkKdwDrvQ9UZlxvz2Q5Fc0" target="_blank" rel="noopener noreferrer">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLSbpTUv-ZunQkKdwDrvQ9UZlxvz2Q5Fc0&index=3&rel=0&modestbranding=1&color=white&iv_load_policy=3" title="Film playlist highlight 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <figcaption>Film Work Highlight 03</figcaption>
+          </a>
+        </figure>
+        <figure class="playlist-card" role="listitem">
+          <a href="https://www.youtube.com/playlist?list=PLSbpTUv-ZunQkKdwDrvQ9UZlxvz2Q5Fc0" target="_blank" rel="noopener noreferrer">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLSbpTUv-ZunQkKdwDrvQ9UZlxvz2Q5Fc0&index=4&rel=0&modestbranding=1&color=white&iv_load_policy=3" title="Film playlist highlight 4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <figcaption>Film Work Highlight 04</figcaption>
+          </a>
+        </figure>
+        <figure class="playlist-card" role="listitem">
+          <a href="https://www.youtube.com/playlist?list=PLSbpTUv-ZunQkKdwDrvQ9UZlxvz2Q5Fc0" target="_blank" rel="noopener noreferrer">
+            <iframe src="https://www.youtube.com/embed/videoseries?list=PLSbpTUv-ZunQkKdwDrvQ9UZlxvz2Q5Fc0&index=5&rel=0&modestbranding=1&color=white&iv_load_policy=3" title="Film playlist highlight 5" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            <figcaption>Film Work Highlight 05</figcaption>
+          </a>
+        </figure>
       </div>
     </section>
 
