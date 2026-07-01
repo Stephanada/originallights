@@ -71,6 +71,31 @@
       align-items: center;
       gap: 10px;
       min-width: 0;
+      position: relative;
+      isolation: isolate;
+      padding-right: 6px;
+    }
+
+    .brand::after {
+      content: "";
+      position: absolute;
+      top: -90%;
+      bottom: -90%;
+      left: -140px;
+      width: 170px;
+      background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0.82) 0%,
+        rgba(255, 255, 255, 0.3) 36%,
+        rgba(255, 255, 255, 0.06) 62%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      border-radius: 999px;
+      mix-blend-mode: screen;
+      filter: blur(8px);
+      transform: translateX(-220px) rotate(10deg);
+      animation: brand-ray 8.5s ease-in-out infinite;
+      pointer-events: none;
     }
 
     .brand img {
@@ -86,9 +111,66 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      overflow: visible;
       font-weight: 700;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+      animation: brand-title-glow 8.5s ease-in-out infinite;
+    }
+
+    .brand img {
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+      animation: brand-icon-glow 8.5s ease-in-out infinite;
+    }
+
+    @keyframes brand-ray {
+      0%, 66%, 100% {
+        transform: translateX(-220px) rotate(10deg);
+        opacity: 0;
+      }
+      73% {
+        opacity: 0.92;
+      }
+      86% {
+        transform: translateX(430px) rotate(10deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes brand-title-glow {
+      0%, 66%, 100% {
+        text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+      }
+      73% {
+        text-shadow:
+          0 0 10px rgba(255, 255, 255, 0.36),
+          0 0 24px rgba(255, 255, 255, 0.2);
+      }
+      81% {
+        text-shadow:
+          0 0 16px rgba(255, 255, 255, 0.45),
+          0 0 28px rgba(255, 255, 255, 0.24);
+      }
+      88% {
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    @keyframes brand-icon-glow {
+      0%, 66%, 100% {
+        filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+      }
+      75% {
+        filter:
+          drop-shadow(0 0 7px rgba(255, 255, 255, 0.56))
+          drop-shadow(0 0 15px rgba(255, 255, 255, 0.28));
+      }
+      87% {
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.22));
+      }
     }
 
     .nav {
@@ -502,6 +584,11 @@
       .nav {
         justify-content: flex-start;
       }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .brand::after,
+      .brand h1 { animation: none; }
     }
   </style>
 </head>
